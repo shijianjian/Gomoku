@@ -1,0 +1,53 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gomoku</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+</head>
+
+	
+<body>
+	<div id="main">
+		<div id="header">
+			<img alt="logo" src="img/GOMOKU_LOGO.png">
+		</div>
+		<div id="board">
+			<canvas id="gomoku" width="450px" height="450px"></canvas>
+		</div>
+	</div>
+	<div id="console">
+		<div id="switchBtn">
+			<h4 id="tip">You can choose the game type! </h4>
+		<div>
+			<label class="white" for="PVE">
+				<input name="gameType" id="PVE" class="gameType" type="radio" name="toggle">
+				<span>PVE</span></label>
+			<label class="white" for="PVP">
+				<input name="gameType" id="PVP" class="gameType" type="radio" name="toggle">
+				<span>PVP</span></label>
+		</div>
+		<div id="playType">
+			<label class="white" for="youBlack">
+			<input name="playType" id="youBlack" type="radio">
+				<span>You Black</span></label>
+			<label class="white" for="youWhite">
+			<input name="playType" id="youWhite" type="radio">
+				<span>You White</span></label>
+		</div>
+			<h4 id="gameTypeTip">You are playing with Computer!</h4>
+		<h4 id="playTypeTip">You play Black!</h4>
+		</div>
+		<button type="button" class="red" id="play"><span>PLAY</span></button>
+		<button type="button" class="red" id="restart"><span>RESTART</span></button>
+		<ul id="screen">
+		</ul>
+	</div>
+	
+	<script type="text/javascript" src="javascript/script.js"></script>
+	<script type="text/javascript" src="javascript/basic.js"></script>
+</body>
+</html>
+
