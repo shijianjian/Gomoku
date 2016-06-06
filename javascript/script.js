@@ -90,6 +90,24 @@ logo.onload = function(){
 	document.getElementById('gomoku').style.pointerEvents = 'none';
 }
 
+var checkStart = function(){
+	var check = 0;
+	for (var i = 0; i<15; i++){
+		for(var j=0; j<15; j++){
+			if(chessBoard[i][j] == 0)
+				check++;
+		}
+	}
+	if(check == 225){
+		document.getElementById("play").disabled = false;
+		return true;
+	}
+	else{
+		document.getElementById('gomoku').style.pointerEvents = 'none';
+		return false;
+	}
+}
+
 var drawBoard = function(){
 	context.strokeStyle="#484546";
 	for(var i=0; i<15 ; i++){
@@ -138,11 +156,12 @@ var drawBoard = function(){
 
 document.getElementById('restart').addEventListener('click',function(){
 	restart();
-	document.getElementById("play").disabled = false;
+	checkStart();
 });
 
 document.getElementById('play').addEventListener('click',function(){
 	if(typeof gameType != 'undefined' && typeof youBlack != 'undefined'){
+		checkStart();
 		play();
 		document.getElementById("play").disabled = true;
 	}else{
@@ -207,7 +226,9 @@ var restart = function(){
 		computerWin[i] = 0;
 	}
 	drawBoard();
-	document.getElementById('mask').remove();
+	if(document.getElementById('mask') != null){
+		document.getElementById('mask').remove();
+	}
 	document.getElementById('tip').innerHTML = 'You can choose the game type! ';
 	document.getElementById("PVP").disabled = false;
 	document.getElementById("PVE").disabled = false;
