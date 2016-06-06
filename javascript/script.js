@@ -157,6 +157,7 @@ var drawBoard = function(){
 document.getElementById('restart').addEventListener('click',function(){
 	restart();
 	checkStart();
+	document.getElementById('gomoku').style.pointerEvents = 'none';
 });
 
 document.getElementById('play').addEventListener('click',function(){
